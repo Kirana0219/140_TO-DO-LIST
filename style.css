@@ -1,0 +1,26 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background: #1a1a1a;
+    color: #ffff;
+    line-height: 1.5;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.container{
+    width: 100%;
+    max-width: 500px;
+    background: #2d2d2d;
+    border-radius: 10px;
+    overflow: hidden;
+}
+

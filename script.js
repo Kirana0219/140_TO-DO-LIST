@@ -9,12 +9,14 @@ const completedTasks = document.getElementById("completed-tasks");
 let total = 0;
 let completed = 0;
 
-
+//event : menambahkan tugas baru 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   const taskText = input.value.trim();
-  if (!taskText) return;
-
+  if (!taskText) {
+    return;
+  }
+  
   addTodo(taskText);
   input.value = "";
 });
@@ -36,6 +38,7 @@ function addTodo(text) {
   const actions = document.createElement("div");
   actions.className = "todo-actions";
 
+  //event : tugas selesai 
   const completeBtn = document.createElement("button");
   completeBtn.className = "btn-complete";
   completeBtn.textContent = "Selesai";
@@ -45,12 +48,16 @@ function addTodo(text) {
     const parentLi = e.target.closest("li");
     parentLi.classList.toggle("completed");
 
-    if (parentLi.classList.contains("completed")) completed++;
-    else completed--;
+    if (parentLi.classList.contains("completed")) {
+        completed++;
+    } else { 
+        completed--;
+    }
 
     completedTasks.textContent = completed;
   });
 
+  //event : tugas di hapus 
   const deleteBtn = document.createElement("button");
   deleteBtn.className = "btn-delete";
   deleteBtn.textContent = "Hapus";
@@ -60,7 +67,9 @@ function addTodo(text) {
     const parentLi = e.target.closest("li");
 
     const confirmDelete = confirm("Apakah Anda yakin ingin menghapus tugas ini?");
-    if (!confirmDelete) return;
+    if (!confirmDelete){
+        return;
+    }
 
     parentLi.remove();
     total--;

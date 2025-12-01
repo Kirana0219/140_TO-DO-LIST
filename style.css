@@ -137,7 +137,7 @@ body {
 }
 
 .todo-item.completed {
-  opacity: 0.6;
+  opacity: 0.5;
   border-left-color: #10b981;
 }
 

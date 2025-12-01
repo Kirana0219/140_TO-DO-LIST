@@ -1,4 +1,4 @@
-// Ambil elemen DOM
+// inisialisasi
 const form = document.getElementById("todo-form");
 const input = document.getElementById("todo-input");
 const todoList = document.getElementById("todo-list");
@@ -16,7 +16,7 @@ form.addEventListener("submit", (e) => {
   if (!taskText) {
     return;
   }
-  
+
   addTodo(taskText);
   input.value = "";
 });
